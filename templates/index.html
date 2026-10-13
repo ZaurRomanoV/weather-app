@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌤 Погода в городе</h1>
+
+        <form action="/weather" method="GET" class="search-form">
+            <input type="text" name="city" placeholder="Например: Moscow" required autofocus>
+            <button type="submit">Узнать</button>
+        </form>
+        <p class="hint">Вводите название города на английском</p>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        {% if weather %}
+            <div class="card">
+                <h2 class="city">{{ weather.city }}</h2>
+                
+                <div class="weather-main">
+                    <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" 
+                         alt="{{ weather.description }}"
+                         class="weather-icon">
+                    <div class="temp">{{ weather.temp }}°C</div>
+                </div>
+                
+                <div class="description">{{ weather.description }}</div>
+                
+                <div class="details">
+                    <div class="detail">
+                        <span class="label">Ощущается</span>
+                        <span class="value">{{ weather.feels_like }}°C</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Влажность</span>
+                        <span class="value">{{ weather.humidity }}%</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Ветер</span>
+                        <span class="value">{{ weather.wind }} м/с</span>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

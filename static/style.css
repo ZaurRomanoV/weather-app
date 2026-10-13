@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-size: 1.8em;
+}
+
+.search-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1.5em;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-form input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.search-form button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-form button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.search-form button:active {
+    transform: translateY(0);
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 2em;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.city {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 1em 0;
+}
+
+.weather-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.temp {
+    font-size: 3.5em;
+    font-weight: 300;
+    color: #667eea;
+    line-height: 1;
+}
+
+.description {
+    font-size: 1.2em;
+    color: #666;
+    text-transform: capitalize;
+    margin-bottom: 1.5em;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #eee;
+    padding-top: 1.5em;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detail .label {
+    font-size: 0.85em;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail .value {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+}
+
+.hint {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: -1em;
+    margin-bottom: 1em;
+}
